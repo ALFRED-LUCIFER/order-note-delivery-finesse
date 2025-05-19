@@ -47,7 +47,7 @@ const DeliveryConfirmation = ({ formData }: DeliveryConfirmationProps) => {
               {formData.attachments.map((file, index) => (
                 <div key={index} className="flex items-center space-x-3 bg-slate-50 p-3 rounded border border-slate-200">
                   <div className="h-8 w-8 rounded bg-white border border-slate-200 flex items-center justify-center">
-                    <FileText className="h-4 w-4 text-indigo-600" />
+                    <FileText className="h-4 w-4 text-purple-600" />
                   </div>
                   <div>
                     <p className="text-sm font-medium text-slate-700 truncate max-w-[200px]">
@@ -64,8 +64,8 @@ const DeliveryConfirmation = ({ formData }: DeliveryConfirmationProps) => {
         </div>
         
         {formData.extraRevisions && (
-          <div className="mt-4 bg-indigo-50 p-4 rounded-md border border-indigo-100">
-            <p className="text-sm text-indigo-700 flex items-center">
+          <div className="mt-4 bg-purple-50 p-4 rounded-md border border-purple-100">
+            <p className="text-sm text-purple-700 flex items-center">
               <CheckCircle2 className="h-4 w-4 mr-2 inline" />
               You've offered additional revisions to the customer if needed
             </p>
@@ -74,7 +74,7 @@ const DeliveryConfirmation = ({ formData }: DeliveryConfirmationProps) => {
       </div>
       
       <div className="flex justify-center pt-4">
-        <Button asChild variant="outline" className="border-indigo-200 text-indigo-700 hover:bg-indigo-50 hover:text-indigo-800">
+        <Button asChild variant="outline" className="border-purple-200 text-purple-700 hover:bg-purple-50 hover:text-purple-800">
           <Link to="/">Back to Home</Link>
         </Button>
       </div>

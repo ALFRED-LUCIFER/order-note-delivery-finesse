@@ -77,8 +77,8 @@ const DeliveryForm = ({ onSubmit }: DeliveryFormProps) => {
     <form onSubmit={handleSubmit} className="space-y-8">
       <div className="space-y-2">
         <div className="flex items-center gap-2 mb-2">
-          <div className="h-8 w-8 rounded-lg bg-indigo-50 flex items-center justify-center">
-            <Package className="h-5 w-5 text-indigo-600" />
+          <div className="h-8 w-8 rounded-lg bg-purple-50 flex items-center justify-center">
+            <Package className="h-5 w-5 text-purple-600" />
           </div>
           <h2 className="text-xl font-medium text-slate-800">Delivery Details</h2>
         </div>
@@ -93,14 +93,14 @@ const DeliveryForm = ({ onSubmit }: DeliveryFormProps) => {
             placeholder="e.g., Final Logo Design Package"
             value={deliveryTitle}
             onChange={(e) => setDeliveryTitle(e.target.value)}
-            className="border-slate-300 focus:border-indigo-400 focus:ring-indigo-400"
+            className="border-slate-300 focus:border-purple-400 focus:ring-purple-400"
           />
         </div>
         
         <div className="space-y-2">
           <div className="flex items-center gap-2 mb-1">
-            <div className="h-5 w-5 rounded-full bg-indigo-50 flex items-center justify-center">
-              <MessageSquare className="h-3 w-3 text-indigo-600" />
+            <div className="h-5 w-5 rounded-full bg-purple-50 flex items-center justify-center">
+              <MessageSquare className="h-3 w-3 text-purple-600" />
             </div>
             <Label htmlFor="message" className="text-sm font-medium text-slate-700">Message to Customer</Label>
           </div>
@@ -109,7 +109,7 @@ const DeliveryForm = ({ onSubmit }: DeliveryFormProps) => {
             placeholder="Write a detailed message explaining what you're delivering..."
             value={message}
             onChange={(e) => setMessage(e.target.value)}
-            className="min-h-32 border-slate-300 focus:border-indigo-400 focus:ring-indigo-400"
+            className="min-h-32 border-slate-300 focus:border-purple-400 focus:ring-purple-400"
           />
           <p className="text-sm text-slate-500 mt-1">
             Include any important instructions or information about the delivered files.
@@ -118,8 +118,8 @@ const DeliveryForm = ({ onSubmit }: DeliveryFormProps) => {
         
         <div className="space-y-2">
           <div className="flex items-center gap-2 mb-1">
-            <div className="h-5 w-5 rounded-full bg-indigo-50 flex items-center justify-center">
-              <Upload className="h-3 w-3 text-indigo-600" />
+            <div className="h-5 w-5 rounded-full bg-purple-50 flex items-center justify-center">
+              <Upload className="h-3 w-3 text-purple-600" />
             </div>
             <Label className="text-sm font-medium text-slate-700">Upload Deliverables</Label>
           </div>
@@ -130,7 +130,7 @@ const DeliveryForm = ({ onSubmit }: DeliveryFormProps) => {
           <Input
             type="checkbox"
             id="extra-revisions"
-            className="w-4 h-4 border-slate-300 rounded text-indigo-600 focus:ring-indigo-500"
+            className="w-4 h-4 border-slate-300 rounded text-purple-600 focus:ring-purple-500"
             checked={extraRevisions}
             onChange={(e) => setExtraRevisions(e.target.checked)}
           />
@@ -143,7 +143,7 @@ const DeliveryForm = ({ onSubmit }: DeliveryFormProps) => {
       <div>
         <Button 
           type="submit" 
-          className="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-medium py-2.5"
+          className="w-full bg-purple-600 hover:bg-purple-700 text-white font-medium py-2.5"
         >
           Deliver Now
         </Button>

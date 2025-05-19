@@ -25,7 +25,7 @@ const DeliveryPage = () => {
     <div className="min-h-screen bg-slate-50/50 py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-6xl mx-auto">
         <div className="mb-6 flex justify-between items-center">
-          <Link to="/" className="inline-flex items-center text-indigo-600 hover:text-indigo-800 transition-colors font-medium">
+          <Link to="/" className="inline-flex items-center text-purple-600 hover:text-purple-800 transition-colors font-medium">
             <ArrowLeft className="w-4 h-4 mr-2" />
             Back to Home
           </Link>
@@ -33,7 +33,7 @@ const DeliveryPage = () => {
             variant="outline" 
             size="sm"
             onClick={handleReload}
-            className="text-indigo-600 border-indigo-200 hover:bg-indigo-50"
+            className="text-purple-600 border-purple-200 hover:bg-purple-50"
           >
             <RefreshCw className="w-4 h-4 mr-2" />
             Reload Page

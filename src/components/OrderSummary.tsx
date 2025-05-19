@@ -26,10 +26,10 @@ const OrderSummary = () => {
   
   return (
     <Card className="shadow-sm border-slate-200 overflow-hidden">
-      <CardHeader className="bg-gradient-to-r from-indigo-50 to-slate-50 border-b pb-5">
+      <CardHeader className="bg-gradient-to-r from-purple-50 to-slate-50 border-b pb-5">
         <CardTitle className="text-lg flex justify-between items-center">
           <span className="text-slate-800">Order Summary</span>
-          <Badge variant="outline" className="bg-white border-indigo-200 text-indigo-700 font-normal">
+          <Badge variant="outline" className="bg-white border-purple-200 text-purple-700 font-normal">
             {orderDetails.status}
           </Badge>
         </CardTitle>

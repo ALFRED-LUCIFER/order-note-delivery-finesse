@@ -50,11 +50,11 @@ const AttachmentUploader = ({ onFileChange }: AttachmentUploaderProps) => {
           onChange={handleFileInput}
         />
         <div className="flex flex-col items-center justify-center space-y-2">
-          <div className="h-12 w-12 rounded-full bg-indigo-50 flex items-center justify-center">
-            <Upload className="h-6 w-6 text-indigo-600" />
+          <div className="h-12 w-12 rounded-full bg-purple-50 flex items-center justify-center">
+            <Upload className="h-6 w-6 text-purple-600" />
           </div>
           <p className="text-sm font-medium text-slate-700">
-            Drag files here or <span className="text-indigo-600">browse</span>
+            Drag files here or <span className="text-purple-600">browse</span>
           </p>
           <p className="text-xs text-slate-500">
             Upload any file type up to 50MB
@@ -72,7 +72,7 @@ const AttachmentUploader = ({ onFileChange }: AttachmentUploaderProps) => {
               <li key={index} className="flex items-center justify-between bg-slate-50 p-3 rounded-md border border-slate-200">
                 <div className="flex items-center space-x-3">
                   <div className="h-8 w-8 rounded bg-white border border-slate-200 flex items-center justify-center">
-                    <FileText className="h-4 w-4 text-indigo-600" />
+                    <FileText className="h-4 w-4 text-purple-600" />
                   </div>
                   <div>
                     <p className="text-sm font-medium text-slate-700 truncate max-w-[200px]">
