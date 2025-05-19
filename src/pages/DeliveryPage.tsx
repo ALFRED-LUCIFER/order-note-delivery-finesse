@@ -5,7 +5,8 @@ import DeliveryForm from "@/components/DeliveryForm";
 import OrderSummary from "@/components/OrderSummary";
 import DeliveryConfirmation from "@/components/DeliveryConfirmation";
 import { Link } from "react-router-dom";
-import { ArrowLeft } from "lucide-react";
+import { ArrowLeft, RefreshCw } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 const DeliveryPage = () => {
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -16,14 +17,27 @@ const DeliveryPage = () => {
     setIsSubmitted(true);
   };
   
+  const handleReload = () => {
+    window.location.reload();
+  };
+  
   return (
     <div className="min-h-screen bg-slate-50/50 py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-6xl mx-auto">
-        <div className="mb-6">
+        <div className="mb-6 flex justify-between items-center">
           <Link to="/" className="inline-flex items-center text-indigo-600 hover:text-indigo-800 transition-colors font-medium">
             <ArrowLeft className="w-4 h-4 mr-2" />
             Back to Home
           </Link>
+          <Button 
+            variant="outline" 
+            size="sm"
+            onClick={handleReload}
+            className="text-indigo-600 border-indigo-200 hover:bg-indigo-50"
+          >
+            <RefreshCw className="w-4 h-4 mr-2" />
+            Reload Page
+          </Button>
         </div>
         
         <h1 className="text-3xl font-bold text-slate-800 mb-2">
