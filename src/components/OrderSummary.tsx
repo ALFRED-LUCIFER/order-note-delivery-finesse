@@ -25,18 +25,18 @@ const OrderSummary = () => {
   };
   
   return (
-    <Card className="shadow-md border-0">
-      <CardHeader className="bg-gradient-to-r from-purple-600/10 to-indigo-600/10 border-b pb-4">
+    <Card className="shadow-sm border-slate-200 overflow-hidden">
+      <CardHeader className="bg-gradient-to-r from-indigo-50 to-slate-50 border-b pb-5">
         <CardTitle className="text-lg flex justify-between items-center">
-          <span>Order Summary</span>
-          <Badge variant="outline" className="bg-white text-purple-700 font-normal">
+          <span className="text-slate-800">Order Summary</span>
+          <Badge variant="outline" className="bg-white border-indigo-200 text-indigo-700 font-normal">
             {orderDetails.status}
           </Badge>
         </CardTitle>
       </CardHeader>
-      <CardContent className="pt-6 space-y-5">
-        <div className="flex items-center space-x-4 pb-4 border-b border-gray-100">
-          <div className="h-12 w-12 rounded-full overflow-hidden">
+      <CardContent className="pt-6 space-y-6 p-6">
+        <div className="flex items-center space-x-4 pb-4 border-b border-slate-100">
+          <div className="h-12 w-12 rounded-full overflow-hidden border border-slate-200">
             <img
               src={orderDetails.customer.avatar}
               alt={orderDetails.customer.name}
@@ -44,45 +44,47 @@ const OrderSummary = () => {
             />
           </div>
           <div>
-            <p className="text-sm font-medium">Customer</p>
-            <p className="text-base">{orderDetails.customer.name}</p>
+            <p className="text-sm text-slate-500">Customer</p>
+            <p className="text-base font-medium text-slate-800">{orderDetails.customer.name}</p>
           </div>
         </div>
         
         <div className="space-y-4">
-          <div className="flex justify-between">
-            <p className="text-sm text-gray-500">Order ID</p>
-            <p className="text-sm font-medium">{orderDetails.orderId}</p>
+          <div className="grid grid-cols-2 gap-1">
+            <p className="text-sm text-slate-500">Order ID</p>
+            <p className="text-sm font-medium text-slate-700 text-right">{orderDetails.orderId}</p>
           </div>
           
-          <div className="flex justify-between">
-            <p className="text-sm text-gray-500">Service</p>
-            <p className="text-sm font-medium">{orderDetails.service}</p>
+          <div className="grid grid-cols-2 gap-1">
+            <p className="text-sm text-slate-500">Service</p>
+            <p className="text-sm font-medium text-slate-700 text-right">{orderDetails.service}</p>
           </div>
           
-          <div className="flex justify-between">
-            <p className="text-sm text-gray-500">Amount</p>
-            <p className="text-sm font-medium">{orderDetails.price}</p>
+          <div className="grid grid-cols-2 gap-1">
+            <p className="text-sm text-slate-500">Amount</p>
+            <p className="text-sm font-medium text-slate-700 text-right">{orderDetails.price}</p>
           </div>
           
-          <div className="flex justify-between">
-            <p className="text-sm text-gray-500">Due Date</p>
-            <p className="text-sm font-medium">
+          <div className="grid grid-cols-2 gap-1">
+            <p className="text-sm text-slate-500">Due Date</p>
+            <p className="text-sm font-medium text-slate-700 text-right">
               {new Date(orderDetails.dueDate).toLocaleDateString()}
             </p>
           </div>
           
-          <div className="flex justify-between items-center pt-2">
-            <p className="text-sm text-gray-500">Delivery Deadline</p>
-            <Badge className={
-              daysLeft() <= 1
-                ? "bg-red-100 text-red-800 hover:bg-red-200"
-                : daysLeft() <= 3
-                ? "bg-yellow-100 text-yellow-800 hover:bg-yellow-200"
-                : "bg-green-100 text-green-800 hover:bg-green-200"
-            }>
-              {daysLeft()} days left
-            </Badge>
+          <div className="pt-2 border-t border-slate-100">
+            <div className="flex justify-between items-center mt-2">
+              <p className="text-sm text-slate-700 font-medium">Delivery Deadline</p>
+              <Badge className={
+                daysLeft() <= 1
+                  ? "bg-red-50 text-red-700 hover:bg-red-100 border border-red-200"
+                  : daysLeft() <= 3
+                  ? "bg-amber-50 text-amber-700 hover:bg-amber-100 border border-amber-200"
+                  : "bg-green-50 text-green-700 hover:bg-green-100 border border-green-200"
+              }>
+                {daysLeft()} days left
+              </Badge>
+            </div>
           </div>
         </div>
       </CardContent>

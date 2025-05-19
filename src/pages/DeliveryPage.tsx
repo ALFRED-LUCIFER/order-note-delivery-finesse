@@ -17,23 +17,29 @@ const DeliveryPage = () => {
   };
   
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 py-12 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-5xl mx-auto">
-        <div className="mb-8">
-          <Link to="/" className="inline-flex items-center text-purple-600 hover:text-purple-800 transition-colors">
+    <div className="min-h-screen bg-slate-50/50 py-12 px-4 sm:px-6 lg:px-8">
+      <div className="max-w-6xl mx-auto">
+        <div className="mb-6">
+          <Link to="/" className="inline-flex items-center text-indigo-600 hover:text-indigo-800 transition-colors font-medium">
             <ArrowLeft className="w-4 h-4 mr-2" />
             Back to Home
           </Link>
         </div>
         
-        <h1 className="text-3xl font-bold text-gray-900 mb-6">
+        <h1 className="text-3xl font-bold text-slate-800 mb-2">
           {isSubmitted ? "Delivery Complete!" : "Deliver Your Order"}
         </h1>
         
+        <p className="text-slate-500 mb-8 max-w-3xl">
+          {isSubmitted 
+            ? "Your work has been successfully delivered to the customer." 
+            : "Complete your delivery by uploading files and adding a message for your customer."}
+        </p>
+        
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           <div className="lg:col-span-2">
-            <Card className="shadow-lg border-0">
-              <div className="p-6">
+            <Card className="shadow-sm border border-slate-200 rounded-lg overflow-hidden">
+              <div className="bg-white p-8">
                 {!isSubmitted ? (
                   <DeliveryForm onSubmit={handleSubmit} />
                 ) : (

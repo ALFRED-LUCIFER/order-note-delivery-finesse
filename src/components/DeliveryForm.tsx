@@ -6,7 +6,7 @@ import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import { useToast } from "@/hooks/use-toast";
 import AttachmentUploader from "./AttachmentUploader";
-import { Package, Truck, MessageSquare } from "lucide-react";
+import { Package, MessageSquare, Upload } from "lucide-react";
 
 interface DeliveryFormProps {
   onSubmit: (data: DeliveryFormData) => void;
@@ -74,72 +74,80 @@ const DeliveryForm = ({ onSubmit }: DeliveryFormProps) => {
   };
   
   return (
-    <form onSubmit={handleSubmit} className="space-y-6">
+    <form onSubmit={handleSubmit} className="space-y-8">
       <div className="space-y-2">
-        <div className="flex items-center gap-2">
-          <Package className="h-5 w-5 text-purple-600" />
-          <h2 className="text-xl font-medium">Delivery Details</h2>
+        <div className="flex items-center gap-2 mb-2">
+          <div className="h-8 w-8 rounded-lg bg-indigo-50 flex items-center justify-center">
+            <Package className="h-5 w-5 text-indigo-600" />
+          </div>
+          <h2 className="text-xl font-medium text-slate-800">Delivery Details</h2>
         </div>
-        <div className="h-px bg-gray-200" />
+        <div className="h-px bg-slate-200" />
       </div>
       
-      <div className="space-y-4">
-        <div>
-          <Label htmlFor="delivery-title">Delivery Title</Label>
+      <div className="space-y-6">
+        <div className="space-y-2">
+          <Label htmlFor="delivery-title" className="text-sm font-medium text-slate-700">Delivery Title</Label>
           <Input 
             id="delivery-title"
             placeholder="e.g., Final Logo Design Package"
             value={deliveryTitle}
             onChange={(e) => setDeliveryTitle(e.target.value)}
-            className="mt-1"
+            className="border-slate-300 focus:border-indigo-400 focus:ring-indigo-400"
           />
         </div>
         
-        <div>
-          <div className="flex items-center gap-2 mb-2">
-            <MessageSquare className="h-4 w-4 text-purple-600" />
-            <Label htmlFor="message">Message to Customer</Label>
+        <div className="space-y-2">
+          <div className="flex items-center gap-2 mb-1">
+            <div className="h-5 w-5 rounded-full bg-indigo-50 flex items-center justify-center">
+              <MessageSquare className="h-3 w-3 text-indigo-600" />
+            </div>
+            <Label htmlFor="message" className="text-sm font-medium text-slate-700">Message to Customer</Label>
           </div>
           <Textarea
             id="message"
             placeholder="Write a detailed message explaining what you're delivering..."
             value={message}
             onChange={(e) => setMessage(e.target.value)}
-            className="min-h-32"
+            className="min-h-32 border-slate-300 focus:border-indigo-400 focus:ring-indigo-400"
           />
-          <p className="text-sm text-gray-500 mt-2">
+          <p className="text-sm text-slate-500 mt-1">
             Include any important instructions or information about the delivered files.
           </p>
         </div>
         
-        <div>
-          <div className="flex items-center gap-2 mb-2">
-            <Truck className="h-4 w-4 text-purple-600" />
-            <Label>Upload Deliverables</Label>
+        <div className="space-y-2">
+          <div className="flex items-center gap-2 mb-1">
+            <div className="h-5 w-5 rounded-full bg-indigo-50 flex items-center justify-center">
+              <Upload className="h-3 w-3 text-indigo-600" />
+            </div>
+            <Label className="text-sm font-medium text-slate-700">Upload Deliverables</Label>
           </div>
           <AttachmentUploader onFileChange={handleFileChange} />
         </div>
         
-        <div className="flex items-center space-x-2">
+        <div className="flex items-center space-x-2 ml-1">
           <Input
             type="checkbox"
             id="extra-revisions"
-            className="w-4 h-4"
+            className="w-4 h-4 border-slate-300 rounded text-indigo-600 focus:ring-indigo-500"
             checked={extraRevisions}
             onChange={(e) => setExtraRevisions(e.target.checked)}
           />
-          <Label htmlFor="extra-revisions" className="text-sm font-normal">
+          <Label htmlFor="extra-revisions" className="text-sm font-medium text-slate-700">
             Offer additional revisions if needed
           </Label>
         </div>
       </div>
       
-      <Button 
-        type="submit" 
-        className="w-full bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700"
-      >
-        Deliver Now
-      </Button>
+      <div>
+        <Button 
+          type="submit" 
+          className="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-medium py-2.5"
+        >
+          Deliver Now
+        </Button>
+      </div>
     </form>
   );
 };
